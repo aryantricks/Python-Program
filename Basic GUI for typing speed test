@@ -18,12 +18,12 @@ def get_rand(lst):
 def change(a=1):
     
     time_f=t.time()
-    if int((time_f)-int(time_i))>=60:
+    if int((time_f)-int(time_i))>=6:
         canva_1.delete('all')
         canva_1.create_text(300,50,text='YOUR TIME IS OVER',fill='red', font=('Helvetica 15 bold'))
         
         canva_1.create_text(250,150,text=('your typing speed is with correct spelling is '+str(t_speed(word_lst,flst))+ ' words per minute'),fill='black', font=('Helvetica 10 bold'))
-        canva_1.create_text(250,180,text=('and with all correct/incorrect word is ',len(word_lst),' words per minute'),fill='black', font=('Helvetica 10 bold'))
+        canva_1.create_text(250,180,text=('and with all correct or incorrect word is '+str(len(word_lst))+' words per minute'),fill='black', font=('Helvetica 10 bold'))
         
         button_2=tk.Button(canva_1,text='click to close ',width=12,command=close)
         button_2.place(x=500,y=150)
