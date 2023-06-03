@@ -15,18 +15,17 @@ def t_speed(main_lst,lst2):
 def get_rand(lst):
     return r.choice(lst)
 
-def change(a):
+def change(a=1):
     
     time_f=t.time()
     if int((time_f)-int(time_i))>=60:
-        print(((time_f)-int(time_i)))
         canva_1.delete('all')
         canva_1.create_text(300,50,text='YOUR TIME IS OVER',fill='red', font=('Helvetica 15 bold'))
         
         canva_1.create_text(250,150,text=('your typing speed is with correct spelling is '+str(t_speed(word_lst,flst))+ ' words per minute'),fill='black', font=('Helvetica 10 bold'))
         canva_1.create_text(250,180,text=('and with all correct/incorrect word is ',len(word_lst),' words per minute'),fill='black', font=('Helvetica 10 bold'))
         
-        button_2=Button(canva_1,text='click to close ',width=12,command=close)
+        button_2=tk.Button(canva_1,text='click to close ',width=12,command=close)
         button_2.place(x=500,y=150)
     else:
         canva_1.delete('all')
@@ -40,7 +39,7 @@ def start():
     global time_i
     time_i=t.time()
     button_1.destroy()
-    change(a)
+    change()
     
 def close():
     root.destroy()
@@ -55,10 +54,10 @@ root.bind('<space>',change)
 canva_1.create_text(300, 50, text="Press The Button to Start ", fill="black", font=('Helvetica 15 bold'))
 canva_1.pack()
 
-button_1=Button(canva_1,text='start',width=10,command=start)
+button_1=tk.Button(canva_1,text='start',width=10,command=start)
 button_1.place(x=250,y=150)
 
-entry=Entry(canva_1,width=30)
+entry=tk.Entry(canva_1,width=30)
 entry.place(x=200,y=100)
 
 
