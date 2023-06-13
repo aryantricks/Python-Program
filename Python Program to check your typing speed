@@ -72,5 +72,4 @@ entry=tk.Entry(canva_1,width=30)
 entry.place(x=200,y=100)
 
 
-
 tk.mainloop()
